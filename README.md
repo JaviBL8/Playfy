@@ -7,10 +7,10 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 ## Desarrollo :rocket:
 
 - [x] Planear proyecto (Descripción, herramientas...)
-- [] Desarrollo (Python, Flask)
-- [] Integración continua y creación de tests unitarios
-- [] Despliegue del microservicio (Docker, IaaS, PaaS)
-- [] Despliegue automático
+- [ ] Desarrollo (Python, Flask)
+- [ ] Integración continua y creación de tests unitarios
+- [ ] Despliegue del microservicio (Docker, IaaS, PaaS)
+- [ ] Despliegue automático
 
 ## Herramientas (no definitivas) :wrench:
  - Lenguaje de programación: [Python](https://www.python.org/)
