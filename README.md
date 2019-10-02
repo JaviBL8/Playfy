@@ -12,15 +12,16 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [ ] Despliegue del microservicio (IaaS, PaaS, SpringCloud)
 - [ ] Despliegue automático
 
+He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no descarto usar Kotlin también porque me gustaría aprenderlo). SpringBoot por ser uno de los framework basados en Java más utilizado para el desarrollo de microservicios y que además proporciona ventajas frente a Spring.
+
 ## Herramientas (no definitivas) :wrench:
  - Lenguaje de programación: [Java](https://java.com/es/)
  - Base de datos: [MySQL](https://www.mysql.com/)
  - Framework: [SpringBoot](https://spring.io/projects/spring-boot) 
- - Despliegue: Aún por decidir (Heroku, Azure, AWS ...)
+ - Despliegue: Aún por decidir (AWS, Azure, Heroku...)
  - Integración continua: [Travis CI](https://travis-ci.org/)
  - Log: [Logstash](https://www.elastic.co/es/products/logstash)
- - Tests: [Junit 5](https://junit.org/junit5/)
-
- He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no descarto usar Kotlin también porque me gustaría aprenderlo). SpringBoot por ser uno de los framework basados en Java más utilizado para el desarrollo de microservicios y que además proporciona ventajas frente a Spring.
+ - Tests: [Junit 5](https://junit.org/junit5/) 
+ 
 ---
 Si el proyecto te resulta interesante no dudes en marcarlo con una estrella :star:
