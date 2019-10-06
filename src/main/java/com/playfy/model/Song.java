@@ -22,7 +22,7 @@ public class Song {
     /*Metodos set y get*/
 
     public long getID() {
-        return id;
+        return this.id;
     }
 
     public void setID(Integer ID) {

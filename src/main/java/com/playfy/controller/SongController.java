@@ -21,7 +21,6 @@ public class SongController {
 
     @GetMapping("/")
     public String getHello() {
-        System.out.println("ASJFaskgj");
         return "Hello world";
     }
 
