@@ -46,6 +46,8 @@ public class PlayfyTests {
     @Test
     public void testAddSong(){
         Song song = new Song();
+        song.setYear(1992);
+        song.setAuthor("Exa");
         song.setTitle("Example");
         song.setAlbum("Example Album");
         song.setID(1);
@@ -60,6 +62,7 @@ public class PlayfyTests {
         int id = 0;
         Song song = restTemplate.getForObject(getRootUrl() + "/songs/" + id, Song.class);
         song.setAlbum("Example");
+        song.setAuthor("Exa");
         song.setTitle("Example title");
         song.setID(id);
 
