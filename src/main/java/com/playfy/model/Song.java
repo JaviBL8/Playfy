@@ -13,20 +13,43 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
+    @Column(name = "year", nullable = false)
+    private Integer year;
+
     @Column(name = "title", nullable = false)
     private String title;
 
     @Column(name = "album", nullable = false)
     private String album;
 
-    /*Metodos set y get*/
 
+
+    /* Métodos set y get */
     public long getID() {
         return this.id;
     }
 
     public void setID(Integer ID) {
         this.id=ID;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author=author;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year=year;
     }
 
     public String getTitle() {

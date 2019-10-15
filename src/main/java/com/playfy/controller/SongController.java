@@ -32,10 +32,10 @@ public class SongController {
     @GetMapping("/songs/{id}")
     public ResponseEntity<Song> getSongsById(@PathVariable(value = "id") Integer songId)
             throws ResourceNotFoundException {
-        Song song =
-                songsRepository
+        Song song = songsRepository
                         .findById(songId)
-                        .orElseThrow(() -> new ResourceNotFoundException("Song with id: "  + songId + " not found"));
+                        .orElseThrow(() -> new ResourceNotFoundException("Song with id "  + songId + " not found"));
+
         return ResponseEntity.ok().body(song);
     }
 
@@ -51,10 +51,12 @@ public class SongController {
         Song song =
                 songsRepository
                         .findById(songId)
-                        .orElseThrow(() -> new ResourceNotFoundException("Song with id: " + songId + " not found"));
+                        .orElseThrow(() -> new ResourceNotFoundException("Song with id " + songId + " not found"));
 
         song.setTitle(songDetails.getTitle());
         song.setAlbum(songDetails.getAlbum());
+        song.setAuthor(songDetails.getAuthor());
+        song.setYear(songDetails.getYear());
         final Song updatedSong = songsRepository.save(song);
         return ResponseEntity.ok(updatedSong);
     }
@@ -65,7 +67,7 @@ public class SongController {
         Song song =
                 songsRepository
                     .findById(songId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Song with id: " + songId + " not found"));
+                    .orElseThrow(() -> new ResourceNotFoundException("Song with id " + songId + " not found"));
 
         songsRepository.delete(song);
         Map<String, Boolean> response = new HashMap<>();
