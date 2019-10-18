@@ -64,6 +64,7 @@ public class PlayfyTests {
         song.setAlbum("Example");
         song.setAuthor("Exa");
         song.setTitle("Example title");
+        song.setYear(1992);
         song.setID(id);
 
         restTemplate.put(getRootUrl() + "/songs/" + id, song);
