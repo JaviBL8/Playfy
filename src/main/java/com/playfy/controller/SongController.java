@@ -3,6 +3,7 @@ package com.playfy.controller;
 import com.playfy.exception.ResourceNotFoundException;
 import com.playfy.model.Song;
 import com.playfy.repository.SongsRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,10 @@ public class SongController {
     private SongsRepository songsRepository;
 
     @GetMapping("/")
-    public String getHello() {
-        return "Hello world";
+    public Map<String, String> showStatus(){
+        HashMap<String, String> map = new HashMap<>();
+        map.put("status", "OK");
+        return map;
     }
 
     @GetMapping("/songs")

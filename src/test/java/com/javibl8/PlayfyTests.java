@@ -32,7 +32,7 @@ public class PlayfyTests {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 
-        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/users", HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/songs", HttpMethod.GET, entity, String.class);
         Assert.assertNotNull(response.getBody());
     }
 
