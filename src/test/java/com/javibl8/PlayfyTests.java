@@ -1,6 +1,5 @@
 package com.javibl8;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.playfy.Application;
 import com.playfy.model.Song;
 import com.playfy.repository.SongsRepository;
@@ -22,7 +21,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(locations = "classpath:db-test.properties")
 @Sql("/songs_database.sql")
 public class PlayfyTests {
