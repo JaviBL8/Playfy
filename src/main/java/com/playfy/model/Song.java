@@ -10,7 +10,6 @@ import javax.persistence.*;
 public class Song {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "author", nullable = false)
