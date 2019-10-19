@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.http.*;
 import org.springframework.web.client.HttpClientErrorException;
@@ -20,7 +22,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
+@TestPropertySource(locations = "classpath:db-test.properties")
+@Sql("/songs_database.sql")
 public class PlayfyTests {
 
     @Autowired
