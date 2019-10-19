@@ -7,4 +7,3 @@ before_install:
   - mysql -u root -e 'CREATE DATABASE songs_database'
   - mysql -u root -e "CREATE USER 'JAVIBL8'@'localhost' IDENTIFIED BY 'practicas,IV';"
   - mysql -u root -e "GRANT ALL ON songs_database.* TO 'JAVIBL8'@'localhost';"
-	
