@@ -7,4 +7,21 @@ before_install:
   - mysql -u root -e 'CREATE DATABASE songs_database'
   - mysql -u root -e "CREATE USER 'JAVIBL8'@'localhost' IDENTIFIED BY 'practicas,IV';"
   - mysql -u root -e "GRANT ALL ON songs_database.* TO 'JAVIBL8'@'localhost';"
-  - mysql -u root -e < /src/main/resources/songs_database.sql
+  - mysql -u root -e "DROP TABLE IF EXISTS `songs`;
+			/*!40101 SET @saved_cs_client     = @@character_set_client */;
+			/*!40101 SET character_set_client = utf8 */;
+			CREATE TABLE `songs` (
+			  `author` varchar(45) NOT NULL,
+			  `title` varchar(45) NOT NULL,
+			  `album` varchar(45) NOT NULL,
+			  `year` int(4) NOT NULL,
+			  `id` int(11) NOT NULL,
+			  PRIMARY KEY (`id`),
+			  UNIQUE KEY `title_UNIQUE` (`title`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8;"
+  - mysql -u root -e "LOCK TABLES `songs` WRITE;
+			/*!40000 ALTER TABLE `songs` DISABLE KEYS */;
+			INSERT INTO `songs` VALUES ('Queen','The show must go on','Innuendo',1991,0),('The Pixies','Where is my mind?','Surfer Rosa',1988,1),('Guns N\' Roses','Welcome to the jungle','Appetite for Destruction',1987,2),('The Cranberries','Zombie','Everybody Else Is Doing It, So Why Can\'t We?',1993,4);
+			/*!40000 ALTER TABLE `songs` ENABLE KEYS */;
+			UNLOCK TABLES;"
+	
