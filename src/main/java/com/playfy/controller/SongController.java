@@ -3,8 +3,7 @@ package com.playfy.controller;
 import com.playfy.exception.ResourceNotFoundException;
 import com.playfy.model.Song;
 import com.playfy.repository.SongsRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,9 +20,37 @@ public class SongController {
     private SongsRepository songsRepository;
 
     @GetMapping("/")
-    public Map<String, String> showStatus(){
-        HashMap<String, String> map = new HashMap<>();
-        map.put("status", "OK");
+    public Map<String, Object> showStatus(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("status:","OK");
+
+        HashMap<String, Object> rutas = new HashMap<>();
+
+        HashMap<String, Object> allSongsMap = new HashMap<>();
+
+        List<Song> allSongs = getAllSongs();
+        if(!allSongs.isEmpty()) {
+            allSongsMap.put("status: ", "OK");
+            allSongsMap.put("contenido: ", allSongs);
+        } else {
+            allSongsMap.put("status: ", "DOWN");
+        }
+        rutas.put("GET /api/songs", allSongsMap);
+
+        HashMap<String, Object> songsByIdMap = new HashMap<>();
+        try {
+            ResponseEntity<Song> songsById = getSongsById(0);
+            Song song = songsById.getBody();
+            songsByIdMap.put("status: ", "OK");
+            songsByIdMap.put("contenido: ", song);
+        } catch (ResourceNotFoundException e) {
+            songsByIdMap.put("status","DOWN");
+        }
+        rutas.put("GET /api/songs/{id}", songsByIdMap);
+        map.put("rutas",rutas);
+
+
+
         return map;
     }
 

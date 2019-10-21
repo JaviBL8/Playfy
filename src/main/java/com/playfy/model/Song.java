@@ -24,9 +24,6 @@ public class Song {
     @Column(name = "album", nullable = false)
     private String album;
 
-
-
-    /* Métodos set y get */
     public long getID() {
         return this.id;
     }
