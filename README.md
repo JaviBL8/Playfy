@@ -15,12 +15,13 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no descarto usar Kotlin también porque me gustaría aprenderlo). SpringBoot por ser uno de los framework basados en Java más utilizado para el desarrollo de microservicios y que además proporciona ventajas frente a Spring.
 
 ## Herramientas :wrench:
+
  - Lenguaje de programación:
     - [Java](https://java.com/es/)
  - ORM:
     - [Hibernate](https://hibernate.org/)
  - SGBD:
-  - [MySQL](https://www.mysql.com/)
+    - [MySQL](https://www.mysql.com/)
  - Framework:
     - [SpringBoot](https://spring.io/projects/spring-boot)
  - Despliegue:
@@ -35,9 +36,15 @@ He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no de
  - Tests:
     - [Junit 4](https://junit.org/junit4/)
 
-## Documentación adicional :notebook:
+## Documentación :notebook:
 - [API](/docs/api.md)
-- [IC](docs/ic.md)
+- [Integración continua](docs/ic.md)
 - [Desarrollo](docs/desarrollo.md)
+- [Buildtool](docs/buildtool.md)
+- [Tests](docs/tests.md)
+- [Status](docs/status.md)
+
+    buildtool: maven
+
 ---
 Si el proyecto te resulta interesante no dudes en marcarlo con una estrella :star:
