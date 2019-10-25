@@ -42,7 +42,7 @@ He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no de
 
 Leer documentación para buildtool.
 
-## Documentación :notebook:
+## [Documentación](/docs) :notebook:
 - [API](/docs/api.md)
 - [Integración continua](docs/ic.md)
 - [Desarrollo](docs/desarrollo.md)
