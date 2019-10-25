@@ -40,7 +40,7 @@ public class PlayfyTests {
     }
 
     @Test
-    public void getAllSongs(){
+    public void testGetAllSongs(){
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
@@ -99,7 +99,7 @@ public class PlayfyTests {
     }
 
     @Test
-    public void testUpdatePost(){
+    public void testUpdateSong(){
         int ID = 5;
         String author = "Exa";
         String title = "Example";
@@ -139,17 +139,20 @@ public class PlayfyTests {
     }
 
     @Test
-    public void testDeletePost(){
-        int id=1;
-        Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
-        Assert.assertNotNull(song);
+    public void testDeleteSong(){
+        int id=4;
+        Song songId = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
+        Assert.assertNotNull(songId);
 
         restTemplate.delete(getRootUrl() + "/api/songs/" + id);
 
         try{
-            song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
+            Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
         } catch (final HttpClientErrorException e) {
             Assert.assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
+
+        songsRepository.save(songId);
+
     }
 }
