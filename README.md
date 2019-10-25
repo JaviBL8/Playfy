@@ -36,6 +36,12 @@ He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no de
  - Tests:
     - [Junit 4](https://junit.org/junit4/)
 
+## Herramienta de construción
+
+    buildtool: maven
+
+Leer documentación para buildtool.
+
 ## Documentación :notebook:
 - [API](/docs/api.md)
 - [Integración continua](docs/ic.md)
@@ -43,8 +49,6 @@ He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no de
 - [Buildtool](docs/buildtool.md)
 - [Tests](docs/tests.md)
 - [Status](docs/status.md)
-
-    buildtool: maven
 
 ---
 Si el proyecto te resulta interesante no dudes en marcarlo con una estrella :star:
