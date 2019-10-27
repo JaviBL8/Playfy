@@ -97,6 +97,23 @@ public class PlayfyTests {
 
         songsRepository.deleteById(id);
     }
+    
+    @Test
+    public void testAddEmptySong(){
+        Song song = new Song();
+
+        long count = songsRepository.count();
+
+        try{
+            ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/songs", song, Song.class);
+            Assert.assertNotNull(postResponse);
+            Assert.assertNotNull(postResponse.getBody());
+        } catch (final HttpClientErrorException e) {
+            Assert.assertEquals(e.getStatusCode(), HttpStatus.BAD_REQUEST);
+            long count1 = songsRepository.count();
+            Assert.assertTrue(count1 == count);
+        }
+    }
 
     @Test
     public void testUpdateSong(){
@@ -137,6 +154,37 @@ public class PlayfyTests {
 
         songsRepository.deleteById(ID);
     }
+    
+    @Test
+    public void testUpdateSongWithWrongData(){
+        int ID = 555;
+        String author = "Cool author";
+        String title = "More cool title";
+        String album = "Even more cool album";
+        int year = 1492;
+
+        Song song1=new Song();
+        song1.setYear(year);
+        song1.setAuthor(author);
+        song1.setTitle(title);
+        song1.setAlbum(album);
+        song1.setID(ID);
+
+        ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/songs", song1, Song.class);
+
+        Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + ID, Song.class);
+        song.setYear(-1234);
+        song.setAuthor("new author; drop table songs");
+        song.setTitle(title);
+        song.setAlbum(album);
+        song.setID(-7);
+
+        try {
+            restTemplate.put(getRootUrl() + "/api/songs/" + ID, song);
+        } catch (final HttpClientErrorException e) {
+            Assert.assertEquals(e.getStatusCode(), HttpStatus.BAD_REQUEST);
+        }
+    }
 
     @Test
     public void testDeleteSong(){
@@ -154,5 +202,16 @@ public class PlayfyTests {
 
         songsRepository.save(songId);
 
+    }
+    
+    @Test
+    public void testDeleteNotExistingSong(){
+        int id=172891;
+        
+        try{
+            Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
+        } catch (final HttpClientErrorException e) {
+            Assert.assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
+        }
     }
 }
