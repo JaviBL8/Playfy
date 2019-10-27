@@ -101,6 +101,7 @@ public class PlayfyTests {
     @Test
     public void testAddEmptySong(){
         Song song = new Song();
+        song.setID(999);
 
         long count = songsRepository.count();
 
