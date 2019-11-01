@@ -12,7 +12,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [ ] Despliegue del microservicio (IaaS, PaaS, SpringCloud)
 - [ ] Despliegue automático
 
-He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no descarto usar Kotlin también porque me gustaría aprenderlo). SpringBoot por ser uno de los framework basados en Java más utilizado para el desarrollo de microservicios y que además proporciona ventajas frente a Spring. 
+He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no descarto usar Kotlin también porque me gustaría aprenderlo). SpringBoot por ser uno de los framework basados en Java más utilizado para el desarrollo de microservicios y que además proporciona ventajas frente a Spring.
 
 ## Herramientas :wrench:
 
@@ -38,7 +38,7 @@ He elegido Java porque tengo soltura con el lenguaje de otras asignaturas (no de
 
 ## Herramienta de construción
 
-    buildtool: maven
+    buildtool: pom.xml
 
 Leer documentación para buildtool.
 
