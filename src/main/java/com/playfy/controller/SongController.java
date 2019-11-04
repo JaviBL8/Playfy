@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class SongController {
 
     @Autowired
     private SongsRepository songsRepository;
 
-    @GetMapping("/")
+    @GetMapping("/status")
     public Map<String, Object> showStatus(){
         HashMap<String, Object> map = new HashMap<>();
         map.put("status:","OK");
@@ -48,8 +48,6 @@ public class SongController {
         }
         rutas.put("GET /api/songs/{id}", songsByIdMap);
         map.put("rutas",rutas);
-
-
 
         return map;
     }
