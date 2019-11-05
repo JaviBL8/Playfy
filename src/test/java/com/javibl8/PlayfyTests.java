@@ -22,7 +22,7 @@ import java.util.Optional;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(locations = "classpath:db-test.properties")
-@Sql("/songs_database.sql")
+@Sql("/songs_database.sql") 
 public class PlayfyTests {
 
     @Autowired
