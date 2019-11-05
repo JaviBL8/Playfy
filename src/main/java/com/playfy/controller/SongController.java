@@ -19,6 +19,11 @@ public class SongController {
     @Autowired
     private SongsRepository songsRepository;
 
+    @GetMapping("/")
+    public String welcome(){
+        return "Welcome to Playfy API";
+    }
+
     @GetMapping("/status")
     public Map<String, Object> showStatus(){
         HashMap<String, Object> map = new HashMap<>();

@@ -12,8 +12,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(
             ResourceNotFoundException ex, WebRequest request) {
-        ErrorResponse errorDetails =
-                new ErrorResponse(false, ex.getMessage());
+            ErrorResponse errorDetails =
+                    new ErrorResponse(false, ex.getMessage());
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 }
