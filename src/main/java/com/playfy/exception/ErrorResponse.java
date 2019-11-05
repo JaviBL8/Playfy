@@ -1,20 +1,22 @@
 package com.playfy.exception;
 
+import org.springframework.http.HttpStatus;
+
 public class ErrorResponse {
 
-    private Boolean status;
+    private HttpStatus status;
     private String message;
 
-    public ErrorResponse(Boolean status, String message) {
+    public ErrorResponse(HttpStatus status, String message) {
         this.status = status;
         this.message = message;
     }
 
-    public Boolean getStatus() {
+    public HttpStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(HttpStatus status) {
         this.status = status;
     }
 
