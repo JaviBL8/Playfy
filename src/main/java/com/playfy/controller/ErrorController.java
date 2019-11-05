@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class ErrorController implements org.springframework.boot.web.servlet.error.ErrorController {
 
     @RequestMapping("/error")
-    public String handleError(HttpServletRequest request) {
+    public HashMap<String, Object> handleError(HttpServletRequest request) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
         HashMap<String, Object> error = new HashMap<>();
@@ -21,19 +21,20 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
         if (status != null) {
             Integer statusCode = Integer.valueOf(status.toString());
 
-            if(statusCode == HttpStatus.NOT_FOUND.value()) {
+            if (statusCode == HttpStatus.NOT_FOUND.value()) {
+                details.put("code: ", "1");
                 details.put("message: ", "We could not find the resource you requested.");
-                details.put("description: ", "The reference set does not exist.");
-                details.put("code: ", "404");
             }
-            else if(statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+            else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+                details.put("code: ", "2");
                 details.put("message: ", "Unexpected internal server error.");
-                details.put("description: ", "No route found");
-                details.put("code: ", "500");
             }
         }
 
-        return null;
+        error.put("status: ", "error");
+        error.put("details",  details);
+
+        return error;
     }
 
     @Override
