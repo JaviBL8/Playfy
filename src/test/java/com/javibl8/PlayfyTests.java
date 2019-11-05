@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.http.*;
 import org.springframework.web.client.HttpClientErrorException;
 
-import javax.validation.constraints.AssertTrue;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +43,7 @@ public class PlayfyTests {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
 
-        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/api/songs", HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/songs", HttpMethod.GET, entity, String.class);
         List<Song> allSongs = songsRepository.findAll();
 
         for(Song s : allSongs){
@@ -60,7 +59,7 @@ public class PlayfyTests {
 
     @Test
     public void testGetSongById(){
-        Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/0", Song.class);
+        Song song = restTemplate.getForObject(getRootUrl() + "/songs/0", Song.class);
         Optional<Song> one = songsRepository.findById(0);
 
         Assert.assertNotNull(song);
@@ -88,7 +87,7 @@ public class PlayfyTests {
 
         long count = songsRepository.count();
 
-        ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/songs", song, Song.class);
+        ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/songs", song, Song.class);
         Assert.assertNotNull(postResponse);
         Assert.assertNotNull(postResponse.getBody());
 
@@ -113,18 +112,18 @@ public class PlayfyTests {
         song1.setAlbum(album);
         song1.setID(ID);
 
-        ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/api/songs", song1, Song.class);
+        ResponseEntity<Song> postResponse = restTemplate.postForEntity(getRootUrl() + "/songs", song1, Song.class);
 
-        Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + ID, Song.class);
+        Song song = restTemplate.getForObject(getRootUrl() + "/songs/" + ID, Song.class);
         song.setYear(year);
         song.setAuthor(author);
         song.setTitle(title);
         song.setAlbum(album);
         song.setID(ID);
 
-        restTemplate.put(getRootUrl() + "/api/songs/" + ID, song);
+        restTemplate.put(getRootUrl() + "/songs/" + ID, song);
 
-        Song updatedSong = restTemplate.getForObject(getRootUrl() + "/api/songs/" + ID, Song.class);
+        Song updatedSong = restTemplate.getForObject(getRootUrl() + "/songs/" + ID, Song.class);
         Assert.assertNotNull(updatedSong);
 
         Optional<Song> one = songsRepository.findById(5);
@@ -141,13 +140,13 @@ public class PlayfyTests {
     @Test
     public void testDeleteSong(){
         int id=4;
-        Song songId = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
+        Song songId = restTemplate.getForObject(getRootUrl() + "/songs/" + id, Song.class);
         Assert.assertNotNull(songId);
 
-        restTemplate.delete(getRootUrl() + "/api/songs/" + id);
+        restTemplate.delete(getRootUrl() + "/songs/" + id);
 
         try{
-            Song song = restTemplate.getForObject(getRootUrl() + "/api/songs/" + id, Song.class);
+            Song song = restTemplate.getForObject(getRootUrl() + "/songs/" + id, Song.class);
         } catch (final HttpClientErrorException e) {
             Assert.assertEquals(e.getStatusCode(), HttpStatus.NOT_FOUND);
         }
