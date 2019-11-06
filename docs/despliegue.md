@@ -72,10 +72,22 @@ Ahora si, desplegamos con `mvn clean heroku:deploy`.
 
 Para abrir la app `heroku open`
 
+![heroku-app](./img/api-heroku.jpg)
+
+*Esta información ahora se muestra en /status*
+
+#### GitHub
+
+Una vez desplegada nuestra aplicación desde la web de Heroku podemos configurarla.
+
+![heroku](./img/heroku.png)
+
 ### Base de datos
 
 Mi intención era también escoger un servicio para almacenar una base de datos que usara mi aplicación.
 Elegí RDS de Amazon Web Services y para poder usarla añadí el endpoint de la base de datos.
+
+![aws](./img/aws.png)
 
 ## Bibliografía
 Sin plugin

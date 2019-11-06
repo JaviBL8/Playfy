@@ -10,7 +10,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [x] Planear proyecto (Descripción, herramientas...)
 - [x] Desarrollo microservicio (Java, SpringBoot)
 - [x] Integración continua y creación de tests unitarios
-- [x] Despliegue del microservicio
+- [x] Despliegue del microservicioencuentra
 - [ ] Despliegue automático
 
 ## Despliegue
@@ -28,6 +28,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [Integración continua](docs/ic.md)
 - [Status](docs/status.md)
 - [API](/docs/api.md)
+- [Base de datos](/docs/bd.md)
 
 
 ---
