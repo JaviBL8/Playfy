@@ -13,7 +13,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [x] Despliegue del microservicio
 - [ ] Despliegue automático
 
-## Despliegue
+## [Despliegue](docs/despliegue.md)
 
     Despliegue: https://playfy.herokuapp.com/
 
