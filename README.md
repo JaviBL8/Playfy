@@ -13,6 +13,10 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [x] Despliegue del microservicio
 - [ ] Despliegue automático
 
+## [Herramienta de construcción](docs/buildtool.md)
+
+    buildtool: pom.xml
+
 ## [Despliegue](docs/despliegue.md)
 
     Despliegue: https://playfy.herokuapp.com/
