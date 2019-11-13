@@ -27,7 +27,7 @@ public class SongController {
     @GetMapping("/status")
     public Map<String, Object> showStatus(){
         HashMap<String, Object> map = new HashMap<>();
-        map.put("status:","OK");
+        map.put("status","OK");
 
         HashMap<String, Object> rutas = new HashMap<>();
 
@@ -35,7 +35,7 @@ public class SongController {
 
         List<Song> allSongs = getAllSongs();
         if(!allSongs.isEmpty()) {
-            allSongsMap.put("status: ", "OK");
+            allSongsMap.put("status", "OK");
             allSongsMap.put("contenido: ", allSongs);
         } else {
             allSongsMap.put("status: ", "DOWN");
@@ -46,7 +46,7 @@ public class SongController {
         try {
             ResponseEntity<Song> songsById = getSongsById(0);
             Song song = songsById.getBody();
-            songsByIdMap.put("status: ", "OK");
+            songsByIdMap.put("status", "OK");
             songsByIdMap.put("contenido: ", song);
         } catch (ResourceNotFoundException e) {
             songsByIdMap.put("status","DOWN");
