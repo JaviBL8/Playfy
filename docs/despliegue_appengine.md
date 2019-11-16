@@ -1,5 +1,6 @@
 # Despligue App Engine
-
+Finalmente no conseguí terminar de desplegar usando AppEngine pero dejó todas las 
+opciones que estuve explorando para desplegar.
 A la hora de desplegar usando App Engine se pueden distinguir 3 formas posibles:
 
 - Usar un plugin para el IDE (Intellij IDEA)
