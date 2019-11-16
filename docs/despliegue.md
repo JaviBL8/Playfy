@@ -16,7 +16,7 @@ Como PaaS elegí Heroku por varios motivos:
 
 - Fácil y rápido despliegue.
 
-También intenté desplegar en otros PaaS, dejo documentación para AppEngine de Google [aquí](.despliegue_appengine).
+También intenté desplegar en otros PaaS, dejo documentación para AppEngine de Google [aquí](despliegue_appengine.md).
 
 ### Despliegue
 

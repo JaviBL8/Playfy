@@ -11,7 +11,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 - [x] Desarrollo microservicio (Java, SpringBoot)
 - [x] Integración continua y creación de tests unitarios
 - [x] Despliegue del microservicio
-- [ ] Despliegue automático
+- [x] Despliegue automático
 
 ## [Herramienta de construcción](docs/buildtool.md)
 
@@ -24,7 +24,8 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
 ## [Documentación](/docs) :notebook:
 
-- [Despliegue](docs/despliegue.md)
+- [Despliegue Heroku](docs/despliegue.md)
+- [Despliegue AppEngine](docs/despliegue_appengine.md)
 - [Herramientas](docs/herramientas.md)
 - [Buildtool](docs/buildtool.md)
 - [Desarrollo](docs/desarrollo.md)
