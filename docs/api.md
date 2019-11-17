@@ -12,4 +12,4 @@
 
 Si se intentase acceder a una ruta no recogida aquí se mostrará "status": `error`.
 Además si se llama a un método con los parámetros equivocados aparecerá error también junto
-a un mensaje.
+a un mensaje más descriptivo del error.

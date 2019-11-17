@@ -1,6 +1,8 @@
 # Despligue App Engine
-Finalmente no conseguí terminar de desplegar usando AppEngine pero dejó todas las 
-opciones que estuve explorando para desplegar.
+Finalmente no conseguí terminar de desplegar usando AppEngine pero dejo todas las 
+opciones que estuve explorando.
+
+
 A la hora de desplegar usando App Engine se pueden distinguir 3 formas posibles:
 
 - Usar un plugin para el IDE (Intellij IDEA)
@@ -43,7 +45,8 @@ $ touch src/main/webapp/WEB-INF/appengine-web.xml
 </appengine-web-app>
 ~~~
 Este fichero se usará para generar el app.yaml del que hablaremos en el siguiente entorno.
-6. Añadir el plugin de maven junto a sus dependencias.
+
+7.Añadir el plugin de maven junto a sus dependencias.
 ~~~
 <plugin>
    <groupId>com.google.appengine</groupId>
@@ -64,7 +67,7 @@ Este fichero se usará para generar el app.yaml del que hablaremos en el siguien
     </dependencyManagement>
 ~~~
 
-7.Desplegar en AppEngine `mvn appengine:deploy -DskipTests`
+8.Desplegar en AppEngine `mvn appengine:deploy -DskipTests`
 
 Cuando añadimos -DskipTests queremos indicar que no pase los tests. Aunque si quisiésemos
 pasarlos solo tendriamos que eliminar esa parte.

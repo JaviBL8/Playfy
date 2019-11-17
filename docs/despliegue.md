@@ -1,3 +1,5 @@
+# Despliegue
+
 ### Elección
 
 Como PaaS elegí Heroku por varios motivos:
@@ -42,11 +44,16 @@ Heroku que estará vinculada a la cuenta con la que nos logeamos anteriormente, 
 Podemos especificar el nombre de nuestra aplicación o no, 
 si no lo especificamos se nos asignará uno aleatorio.
 
-4. Finalmente, para abrir la app `heroku open`
+4. Desplegamos con `git push heroku master`, aquí se detecta que la aplicación tiene
+un fichero *pom.xml* y por lo tanto se establece que la aplicación usa Maven/Java, 
+por defecto usa Java8 pero se puede cambiar creando un fichero *system.properties*
+5. Finalmente, para visitar la app `heroku open`
+6. Como extra, podemos visualizar el log de la aplicación con `heroku log --tail`
+(para que nos aparezcan los más recientes).
 
 #### 2ª Con plugin
 
-Primero añadimos el plugin de heroku al *pom.xml*:
+1. Primero añadimos el plugin de heroku al *pom.xml*:
 
 ~~~
 <project>
@@ -64,11 +71,12 @@ Primero añadimos el plugin de heroku al *pom.xml*:
 </project>
 ~~~
 
-Creamos una aplicación con `heroku apps:create playfy`.
+2.Creamos una aplicación con `heroku apps:create playfy`. Tiene el mismo efecto que el
+paso 3 de antes.
 
-Ahora si, desplegamos con `mvn clean heroku:deploy`.
+3.Ahora si, desplegamos con `mvn clean heroku:deploy`.
 
-Para abrir la app `heroku open`
+4.Para abrir la app `heroku open`
 
 ![heroku-app](./img/api-heroku.jpg)
 
