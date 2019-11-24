@@ -42,7 +42,7 @@ Clickamos a *mostrar configuración opcional de revisión*. El problema viene de
 memoria asignada, la ponemos a 512 Mib, adicionalmente establecemos el tiempo de espera en 
 800 segundos(esto no es obligatorio), finalmente como queremos ahorrar costes establecemos,
 el número máximo de instancias a 1. Si dejásemos esto último a 1000 se crearían instacias
-automáticamente si el sistema empezase a saturarse para equilibrar la carga.
+automáticamente si el sistema empezase a saturarse para equilibrar la carga.  
 ![avanzadas run](img/avanzada-run.png)
 5. Finalmente damos a crear.
 ![desplegada run](img/run-desplegado.png)
