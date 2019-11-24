@@ -1,5 +1,5 @@
-FROM openjdk:8
-ADD target/playfy.jar playfy.jar
-WORKDIR .
+FROM maven:3.6-jdk-8
+COPY . /playfy
+WORKDIR playfy
 EXPOSE 8080
-ENTRYPOINT ["java","-Dserver.port=8080","-jar","playfy.jar"]
+CMD mvn spring-boot:run -Dserver.port=8080
