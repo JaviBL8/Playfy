@@ -26,7 +26,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
     Repositorio: https://hub.docker.com/repository/docker/javibl8/docker-playfy
 
-## [Despliegue en Google Run](docs/despliegue_run.md)
+## [Despliegue contenedor Cloud Run](docs/despliegue_run.md)
 
     Contenedor: https://docker-playfy-ewjnsmckva-ew.a.run.app
 
@@ -34,7 +34,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
 - [Despliegue PaaS (Heroku)](docs/despliegue.md)
 - [Despliegue PaaS (AppEngine)](docs/despliegue_appengine.md)
-- [Despligue contenedor (Google Run)](docs/despliegue_docker.md)
+- [Despligue contenedor (Cloud Run)](docs/despliegue_docker.md)
 - [Herramientas](docs/herramientas.md)
 - [Buildtool](docs/buildtool.md)
 - [Desarrollo](docs/desarrollo.md)
