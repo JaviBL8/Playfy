@@ -32,8 +32,8 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
 ## [Documentación](/docs) :notebook:
 
-- [Despliegue PaaS Heroku](docs/despliegue.md)
-- [Despliegue PaaS AppEngine](docs/despliegue_appengine.md)
+- [Despliegue PaaS (Heroku)](docs/despliegue.md)
+- [Despliegue PaaS (AppEngine)](docs/despliegue_appengine.md)
 - [Despligue contenedor (Google Run)](docs/despliegue_docker.md)
 - [Herramientas](docs/herramientas.md)
 - [Buildtool](docs/buildtool.md)
