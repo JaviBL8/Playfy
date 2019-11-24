@@ -32,9 +32,10 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
 ## [Documentación](/docs) :notebook:
 
+- [Crear imagen en local (Docker)](docs/crear_imagen.md)
+- [Despligue contenedor (Cloud Run)](docs/despliegue_docker.md)
 - [Despliegue PaaS (Heroku)](docs/despliegue.md)
 - [Despliegue PaaS (AppEngine)](docs/despliegue_appengine.md)
-- [Despligue contenedor (Cloud Run)](docs/despliegue_docker.md)
 - [Herramientas](docs/herramientas.md)
 - [Buildtool](docs/buildtool.md)
 - [Desarrollo](docs/desarrollo.md)
