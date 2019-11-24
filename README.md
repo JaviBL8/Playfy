@@ -2,6 +2,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/JaviBL8/Playfy.svg?branch=master)](https://travis-ci.org/JaviBL8/Playfy)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://playfy.herokuapp.com/)
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://docker-playfy-ewjnsmckva-ew.a.run.app/)
 
 Microservicio para recomendar música. El usuario introducirá unos cuantos datos y el sistema realizará una recomendación en función a estos parámetros. Para llevar a cabo esta idea tendré un conjunto de parámetros asociados a cada canción (género, año...) que almacenaré dentro de una base de datos a la que realizaré consultas.
 
@@ -17,15 +18,23 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
     buildtool: pom.xml
 
-## [Despliegue](docs/despliegue.md)
+## [Despliegue en Heroku](docs/despliegue.md)
 
     Despliegue: https://playfy.herokuapp.com/
 
+## [Repositorio DockerHub](docs/dockerhub.md)
+
+    Repositorio: https://hub.docker.com/repository/docker/javibl8/docker-playfy
+
+## [Despliegue en Google Run](docs/despliegue_run.md)
+
+    Contenedor: https://docker-playfy-ewjnsmckva-ew.a.run.app
 
 ## [Documentación](/docs) :notebook:
 
-- [Despliegue Heroku](docs/despliegue.md)
-- [Despliegue AppEngine](docs/despliegue_appengine.md)
+- [Despliegue PaaS Heroku](docs/despliegue.md)
+- [Despliegue PaaS AppEngine](docs/despliegue_appengine.md)
+- [Despligue contenedor (Google Run)](docs/despliegue_docker.md)
 - [Herramientas](docs/herramientas.md)
 - [Buildtool](docs/buildtool.md)
 - [Desarrollo](docs/desarrollo.md)
