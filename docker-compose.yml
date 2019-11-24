@@ -1,0 +1,7 @@
+version: '3'
+services:
+  playfy:
+    image: javibl8/docker-playfy
+    container_name: playfy
+    ports:
+      - '8080:8080'
