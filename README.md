@@ -24,7 +24,7 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
 ## [Repositorio DockerHub](docs/dockerhub.md)
 
-    Repositorio: https://hub.docker.com/repository/docker/javibl8/docker-playfy
+    Repositorio: https://hub.docker.com/r/javibl8/docker-playfy
 
 ## [Despliegue contenedor Cloud Run](docs/despliegue_run.md)
 
