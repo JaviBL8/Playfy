@@ -30,8 +30,15 @@ Microservicio para recomendar música. El usuario introducirá unos cuantos dato
 
     Contenedor: https://docker-playfy-ewjnsmckva-ew.a.run.app
 
+## [Playbook](docs/ansible.md)
+
+    provision: playbook.yml
+
+
 ## [Documentación](/docs) :notebook:
 
+- [Provisionamiento con Ansible](docs/ansible.md)
+- [Configuración de Vagrant](docs/vagrant.md)
 - [Subir imagen y autobuild (DockerHub)](docs/dockerhub.md)
 - [Crear imagen en local (Docker)](docs/crear_imagen.md)
 - [Uso de docker-compose](docs/compose.md)
