@@ -1,0 +1,26 @@
+- hosts: all
+  tasks:
+    - name: Instalar Git
+      become: yes
+      apt: name=git state=installed update_cache=true
+
+    - name: Añadir el repositorio Java de Oracle
+      become: yes
+      apt_repository: repo='ppa:openjdk-r/ppa' update_cache=true
+
+    - name: Instalar OpenJDK 11
+      become: yes
+      apt: name="openjdk-11-jdk"
+
+    - name: Copiar clave
+      authorized_key: 
+        user: vagrant
+        key: "{{  lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+    
+    - name: Clonar repositorio del proyecto
+      become: yes
+      git:
+        repo: 'https://github.com/JaviBL8/Playfy.git'
+        clone: yes
+        dest: /Playfy
+    
