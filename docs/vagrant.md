@@ -15,7 +15,7 @@ Los resultados que obtuve fueron estos:
 ![resultados](./img/loadtest-ub16.04lts.png)
 
 ### Vagrantfile
-He eliminado comentarios por defecto para facilitar su comprensión
+He eliminado comentarios por defecto para facilitar su comprensión.
 
 ~~~
 # -*- mode: ruby -*-
@@ -51,6 +51,20 @@ He usado provisionamiento múltiple y en primer lugar se ejecuta el playbook.yml
 y en segundo lugar lanzo mi microservicio con el shell. Si quisiéramos ejecutar solo uno
 de los dos podríamos hacerlo con `vagrant provision --provision-with ansible` por ejemplo.
 
+### Publicación de la imagen
+
+Para publicar nuestra imagen en algún repositorio de imágenes público antes tenemos que 
+obtener el **.box** resultante de nuestra imagen del SO. Para ello ejecutaremos:   
+  
+  `$ vagrant package --base my-virtual-machine`  
+
+Una vez tenemos este paso, realizamos el resto desde la web. En mi caso he subido la imagen a 
+Vagrant Cloud y para ello desde el perfil seleccionamos create new Vagrant box y ahí se nos 
+permitirá subir el **.box** que anteriormente creamos.
+
+~~~
+    Vagrant box: https://app.vagrantup.com/javibl8/boxes/playfy
+~~~
 ### Bibliografía
 
  - https://github.com/hashicorp/vagrant/issues/9015
@@ -59,3 +73,5 @@ de los dos podríamos hacerlo con `vagrant provision --provision-with ansible` p
  - https://www.vagrantup.com/docs/vagrantfile/
  - https://www.vagrantup.com/docs/provisioning/basic_usage.html
  - https://stackoverflow.com/questions/10864372/how-to-ssh-to-vagrant-without-actually-running-vagrant-ssh
+ - https://www.vagrantup.com/docs/boxes/base.html
+ - https://blog.ycshao.com/2017/09/16/how-to-upload-vagrant-box-to-vagrant-cloud/
