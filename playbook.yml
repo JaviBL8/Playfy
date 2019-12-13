@@ -11,11 +11,6 @@
     - name: Instalar OpenJDK 11
       become: yes
       apt: name="openjdk-11-jdk"
-
-    - name: Copiar clave
-      authorized_key: 
-        user: vagrant
-        key: "{{  lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
     
     - name: Clonar repositorio del proyecto
       become: yes
